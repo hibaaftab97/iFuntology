@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/General/HomeScreen';
 import CourseDetailScreen from '../screens/General/CourseDetailScreen';
 import InviteStudentScreen from '../screens/General/InviteStudentScreen';
+import StudentListScreen from '../screens/General/StudentListScreen';
 
 
 function HomeStack() {
@@ -25,6 +26,11 @@ function HomeStack() {
         options={{headerShown: false}}
         name="InviteStudentScreen"
         component={InviteStudentScreen}
+      /> 
+       <Stack.Screen
+        options={{headerShown: false}}
+        name="StudentListScreen"
+        component={StudentListScreen}
       /> 
     </Stack.Navigator>
   );

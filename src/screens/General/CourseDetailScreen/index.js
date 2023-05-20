@@ -50,6 +50,8 @@ const CourseDetailScreen = props => {
                             onPress={()=> props.navigation.navigate("InviteStudentScreen")}
                             endColor="#947037" />
                         <CommonButton text="View Students"
+                            onPress={()=> props.navigation.navigate("StudentListScreen")}
+
                         />
                     </View>
 

@@ -15,6 +15,8 @@ export const icons={
   download: require('./icons/download.png'),
   pdf: require('./icons/pdf.png'),
   backarrow: require('./icons/backarrow.png'),
+  forwardArrow: require('./icons/forwardArrow.png'),
+
 }
 export const authicons={
   eyeclose: require('./authIcons/eyeclose.png'),
