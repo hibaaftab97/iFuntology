@@ -13,12 +13,21 @@ export default style = StyleSheet.create({
         backgroundColor: theme.whiteBackground,
         paddingVertical: 5 * vh,
         // paddingHorizontal:2*vw,
-        marginTop:0.5*vh,
+        // marginTop:0.5*vh,
         width: 100 * vw,
+        height:100*vh ,
         borderTopRightRadius: 10 * vw,
         borderTopLeftRadius: 10 * vw,
-        height:100*vh,
 
+      },
+      drawerIconStyle: {
+        resizeMode: 'contain',
+        height: 6 * vw,
+        width: 6 * vw,
+      },
+    
+      drawerButtonView: {
+        justifyContent: 'center',
       },
       pinkBox:{
         backgroundColor: theme.primary,
@@ -26,7 +35,6 @@ export default style = StyleSheet.create({
         paddingHorizontal: 2 * vw,
         marginTop:1*vh,
         alignItems: 'center',
-        height:100*vh,
         width: 100 * vw,
         borderTopRightRadius: 10 * vw,
         borderTopLeftRadius: 10 * vw,

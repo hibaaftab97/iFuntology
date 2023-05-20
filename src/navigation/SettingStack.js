@@ -7,39 +7,35 @@ import CourseDetailScreen from '../screens/General/CourseDetailScreen';
 import InviteStudentScreen from '../screens/General/InviteStudentScreen';
 import StudentListScreen from '../screens/General/StudentListScreen';
 import StudentDetailScreen from '../screens/General/StudentDetailScreen';
+import SettingScreen from '../screens/General/SettingScreen';
+import SetPasswordScreen from '../screens/General/SetPasswordScreen';
+import EditProfile from '../screens/General/EditProfile';
 
 
-function HomeStack() {
+function SettingStack() {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
       <Stack.Screen
         options={{headerShown: false}}
-        name="HomeScreen"
-        component={HomeScreen}
+        name="SettingScreen"
+        component={SettingScreen}
       /> 
-       <Stack.Screen
+
+<Stack.Screen
         options={{headerShown: false}}
-        name="CourseDetailScreen"
-        component={CourseDetailScreen}
+        name="SetPasswordScreen"
+        component={SetPasswordScreen}
       /> 
-      <Stack.Screen
+
+<Stack.Screen
         options={{headerShown: false}}
-        name="InviteStudentScreen"
-        component={InviteStudentScreen}
+        name="EditProfile"
+        component={EditProfile}
       /> 
-       <Stack.Screen
-        options={{headerShown: false}}
-        name="StudentListScreen"
-        component={StudentListScreen}
-      /> 
-      <Stack.Screen
-        options={{headerShown: false}}
-        name="StudentDetailScreen"
-        component={StudentDetailScreen}
-      /> 
+      
     </Stack.Navigator>
   );
 }
 
-export default HomeStack;
+export default SettingStack;

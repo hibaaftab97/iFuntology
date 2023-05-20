@@ -16,6 +16,14 @@ export const icons={
   pdf: require('./icons/pdf.png'),
   backarrow: require('./icons/backarrow.png'),
   forwardArrow: require('./icons/forwardArrow.png'),
+  menu: require('./icons/menu.png'),
+  notification: require('./icons/notification.png'),
+  profile: require('./icons/profile.png'),
+  edit: require('./icons/edit.png'),
+  delete: require('./icons/delete.png'),
+  flag: require('./icons/flag.png'),
+  dropdown: require('./icons/dropdown.png'),
+
 
 }
 export const authicons={
