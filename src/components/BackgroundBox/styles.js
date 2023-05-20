@@ -12,7 +12,7 @@ export default style = StyleSheet.create({
       fieldContainer: {
         backgroundColor: theme.whiteBackground,
         paddingVertical: 5 * vh,
-        paddingHorizontal:2*vw,
+        // paddingHorizontal:2*vw,
         marginTop:0.5*vh,
         width: 100 * vw,
         borderTopRightRadius: 10 * vw,

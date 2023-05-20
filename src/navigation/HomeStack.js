@@ -6,6 +6,7 @@ import HomeScreen from '../screens/General/HomeScreen';
 import CourseDetailScreen from '../screens/General/CourseDetailScreen';
 import InviteStudentScreen from '../screens/General/InviteStudentScreen';
 import StudentListScreen from '../screens/General/StudentListScreen';
+import StudentDetailScreen from '../screens/General/StudentDetailScreen';
 
 
 function HomeStack() {
@@ -31,6 +32,11 @@ function HomeStack() {
         options={{headerShown: false}}
         name="StudentListScreen"
         component={StudentListScreen}
+      /> 
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="StudentDetailScreen"
+        component={StudentDetailScreen}
       /> 
     </Stack.Navigator>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View,  } from 'react-native';
+import { Text, TouchableOpacity, View,  } from 'react-native';
 import TextWrapper from '../TextWrapper';
 import styles from './styles';
 import { vh, vw } from '../../units';
@@ -29,12 +29,13 @@ const StudentBox = props => {
                 <TextWrapper style={styles.value}>{props?.item?.email}</TextWrapper>
 
             </View>
-            <View style={styles.row}>
+            <TouchableOpacity style={styles.row}
+            onPress={props.onPress}>
 
                 <TextWrapper style={styles.viewDetails}>View Details</TextWrapper>
 
 
-            </View>
+            </TouchableOpacity>
         </View>
 
     </View>

@@ -61,7 +61,8 @@ const StudentListScreen = props => {
                         ListFooterComponent={footer}
                         renderItem={({ item, index }) => {
                             return (
-                                <StudentBox item={item} />
+                                <StudentBox item={item} 
+                                onPress={()=>props.navigation.navigate("StudentDetailScreen")}/>
 
                             )
                         }} />

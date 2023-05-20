@@ -46,7 +46,8 @@ const BackgroundBox = props => {
             <View style={styles.pinkBox} >
                 <View style={styles.fieldContainer}>
                     {props?.bgColor ? <ImageBackground
-                        style={{ flex: 1 }}
+                        style={{ flex: 1 ,width:100*vw}}
+                        imageStyle={{width:100*vw}}
                         source={generalImages.bgColor}>
                         {props.children}
 
