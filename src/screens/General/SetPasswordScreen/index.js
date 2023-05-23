@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { View, Dimensions, LayoutAnimation, ImageBackground, Text, TouchableOpacity } from 'react-native';
+import { View, } from 'react-native';
 import styles from './styles';
 import { vh, vw } from '../../../units';
 import ScrollWrapper from '../../../components/ScrollWrapper';
 import GeneralTextInput from '../../../components/TextInputs/GeneralTextInput';
-import LinearGradient from 'react-native-linear-gradient';
 import CommonButton from '../../../components/Button';
-import allImages from '../../../assets/images';
 import BackgroundBox from '../../../components/BackgroundBox';
-import TextWrapper from '../../../components/TextWrapper';
-import theme from '../../../utils/theme';
 
 const SetPasswordScreen = props => {
 

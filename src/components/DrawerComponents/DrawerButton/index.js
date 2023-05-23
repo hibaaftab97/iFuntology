@@ -11,33 +11,22 @@ import styles from './styles';
 const drawerRoutes = {
   HomeScreen: {
     label: 'Home',
-    icon: icons.download,
+    icon: icons.home,
   },
   ContactUsStack: {
     label: 'Contact Us',
-    icon: icons.download,
-  },
-  ProfileStack: {
-    label: 'Shop',
-    icon: icons.download,
+    icon: icons.contact,
   },
   SettingStack: {
     label: 'Setting',
-    icon: icons.download,
+    icon: icons.settings,
   },
 };
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 const DrawerButton = props => {
-  // const progress = useDrawerProgress();
-  // const translateX = Animated.interpolateNode(progress, {
-  //   inputRange: [0, 1],
-  //   outputRange: [-40 * vw * (props.index + 1), 0],
-  // });
-  // const animatedStyles = {
-  //   transform: [{translateX}],
-  // };
+
   const routeConfigs = drawerRoutes[props.routeName];
 
   return (

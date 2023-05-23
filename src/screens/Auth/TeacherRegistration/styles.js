@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
   box:{
       width:4*vw,
       height:4*vw,
+      alignItems:"center",
+      justifyContent:'center',
       backgroundColor:theme.textOutline
   }
   

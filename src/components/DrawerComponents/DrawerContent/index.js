@@ -14,7 +14,6 @@ import { DrawerActions, useNavigation } from '@react-navigation/native';
 const routeOrders = [
   'HomeScreen',
   'ContactUsStack',
-  'ProfileStack',
   'SettingStack'
 ];
 const drawerRoutes = {
@@ -26,10 +25,6 @@ const drawerRoutes = {
     label: 'Contact Us',
     icon: icons.download,
   },
-  ProfileStack: {
-    label: 'Shop',
-    icon: icons.download,
-  },
   SettingStack: {
     label: 'Setting',
     icon: icons.download,
@@ -39,7 +34,6 @@ const drawerRoutes = {
 
 
 const DrawerContent = props => {
-  const navigation = useNavigation();
 
 
   const handleOnDrawerItemPress = routeName => {
@@ -54,21 +48,18 @@ const DrawerContent = props => {
 
   return (
     <DrawerContentScrollView
+    key={Math.random()}
       {...props}
       contentContainerStyle={{ backgroundColor: theme.primary,flex:1}}>
-      {/* <ImageBackground source={Icons.drawerbg}
-        imageStyle={{ width: 80 * vw, height: 50 * vh }}
-        resizeMode='cover'
-        style={{ width: 80 * vw, height: 20 * vh, alignItems: 'center', justifyContent: 'center' }}>
-        <Image source={Icons.logo}
-          style={styles.logo} />
-      </ImageBackground> */}
+      
 
       <View style={styles.routeContainer}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsVerticalScrollIndicator={false}
+        key={Math.random()}>
         {routeOrders.map((item, index) => {
           return (
             <DrawerButton
+            key={item}
               index={index}
               onPress={handleOnDrawerItemPress}
               routeName={item}

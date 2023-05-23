@@ -16,17 +16,19 @@ function MainNavigator() {
 
   return (
     <Stack.Navigator>
+
       <Stack.Screen
-          options={{ headerShown: false }}
-          name="DrawerNavigator"
-          component={DrawerNavigator}
-        />
-         <Stack.Screen
         options={{ headerShown: false }}
         name="AuthStack"
         component={AuthStack}
       />
-    
+
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name="DrawerNavigator"
+        component={DrawerNavigator}
+      />
+
     </Stack.Navigator>
   );
 }

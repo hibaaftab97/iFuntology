@@ -42,6 +42,7 @@ const SubscriptionPlanScreen = props => {
 
                 <View style={{ alignItems: 'center',justifyContent:'flex-end' ,height:30*vh}}>
                     <CommonButton text="Pay Now"
+                    onPress={()=> props.navigation.navigate("DrawerNavigator")}
                         buttonStyle={{ marginTop: 8 * vh }} />
                 
 

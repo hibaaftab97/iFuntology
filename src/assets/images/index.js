@@ -6,6 +6,10 @@ export const generalImages={
   nailtology: require('./background/nailtology.jpeg'),
   skintology: require('./background/skintology.jpeg'),
   barbertology: require('./background/barbertology.jpeg'),
+  barber: require('./background/barber.png'),
+  fun: require('./background/fun.png'),
+  nail: require('./background/nail.png'),
+  skin: require('./background/skin.png'),
 
 
 }
@@ -23,7 +27,12 @@ export const icons={
   delete: require('./icons/delete.png'),
   flag: require('./icons/flag.png'),
   dropdown: require('./icons/dropdown.png'),
-
+  buysubscription: require('./icons/buysubscription.png'),
+  cross: require('./icons/cross.png'),
+  settings: require('./icons/settings.png'),
+  home: require('./icons/home.png'),
+  contact: require('./icons/contact.png'),
+  tick: require('./icons/tick.png'),
 
 }
 export const authicons={

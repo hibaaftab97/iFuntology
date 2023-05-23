@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { View, Dimensions, LayoutAnimation, ImageBackground, Text, TouchableOpacity } from 'react-native';
+import { View, Dimensions, Image, ImageBackground, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import { vh, vw } from '../../../units';
 import ScrollWrapper from '../../../components/ScrollWrapper';
 import GeneralTextInput from '../../../components/TextInputs/GeneralTextInput';
 import LinearGradient from 'react-native-linear-gradient';
 import CommonButton from '../../../components/Button';
-import allImages from '../../../assets/images';
+import allImages, { icons } from '../../../assets/images';
 import BackgroundBox from '../../../components/BackgroundBox';
 import TextWrapper from '../../../components/TextWrapper';
 import theme from '../../../utils/theme';
 
 const RegisterScreen = props => {
+
+  const [agree, setAgree] = useState(false);
 
     return (
         <ScrollWrapper avoidKeyboard={true}
@@ -48,12 +50,15 @@ const RegisterScreen = props => {
 
                     />
                 </View>
-                <View style={{ flexDirection: 'row', marginTop: 2 * vh, paddingLeft: 8 * vw, alignItems: 'center' }}>
+                <TouchableOpacity
+                onPress={()=> setAgree(!agree)}
+                 style={{ flexDirection: 'row', marginTop: 2 * vh, paddingLeft: 8 * vw, alignItems: 'center' }}>
                     <View style={styles.box}>
-
+                        {agree===true?<Image  source={icons.tick}
+                        style={{width:3*vw,height:3*vw,resizeMode:'contain'}}/>:null}
                     </View>
                     <TextWrapper style={{ color: theme.black, fontSize: 1.7 * vh }}>  I Agree to Terms & Conditions</TextWrapper>
-                </View>
+                </TouchableOpacity>
 
                 <View style={{ alignItems: 'center' }}>
                     <CommonButton text="Register"

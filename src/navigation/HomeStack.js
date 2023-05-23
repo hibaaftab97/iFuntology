@@ -7,6 +7,8 @@ import CourseDetailScreen from '../screens/General/CourseDetailScreen';
 import InviteStudentScreen from '../screens/General/InviteStudentScreen';
 import StudentListScreen from '../screens/General/StudentListScreen';
 import StudentDetailScreen from '../screens/General/StudentDetailScreen';
+import PackageDetailScreen from '../screens/General/PackageDetailScreen';
+import PurchaseOrderScreen from '../screens/General/PurchaseOrderScreen';
 
 
 function HomeStack() {
@@ -37,6 +39,16 @@ function HomeStack() {
         options={{headerShown: false}}
         name="StudentDetailScreen"
         component={StudentDetailScreen}
+      /> 
+       <Stack.Screen
+        options={{headerShown: false}}
+        name="PackageDetailScreen"
+        component={PackageDetailScreen}
+      /> 
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="PurchaseOrderScreen"
+        component={PurchaseOrderScreen}
       /> 
     </Stack.Navigator>
   );

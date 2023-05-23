@@ -7,8 +7,13 @@ import SplashScreen from "react-native-splash-screen";
 import theme from '../utils/theme';
 
 
-function Navigation() {
 
+function Navigation() {
+ 
+
+    useEffect(() => {
+      SplashScreen.hide();
+    });
   return (
     <SafeAreaView style={{ flex: 1,
       backgroundColor: theme.primary,

@@ -23,32 +23,62 @@ const CoursesBox = props => {
         r
     );
     return (
-        <TouchableOpacity   
-        onPress={props.onPress}
-        style={{marginLeft:0*vw,paddingHorizontal:3*vw,marginTop:2*vh}}>
-        <View style={[styles.pinkBox,{backgroundColor:props?.item?.bg}]}>
 
-            <Canvas style={{ flex: 1, alignItems: 'center' }}>
-                <Group
-                    clip={roundedRect}
+        <View style={{ marginLeft: 0 * vw, paddingHorizontal: 3 * vw, marginTop: 2 * vh }}>
+
+            <View style={[styles.pinkBox, { backgroundColor: props?.item?.bg }]}>
+
+                <Canvas style={{ flex: 1, alignItems: 'center' }}
+                onTouch={props.onSubscribe}
                 >
-                    <Image
-                        width={40 * vw}
-                        x={0}
-                        y={0}
-                        height={15 * vh}
-                        image={useImage(props?.item?.image)}
-                        fit="cover"
+                    <Group
+                        clip={roundedRect}
                     >
-                        <BlurMask blur={8} style='normal'
-                        />
-                    </Image>
-                </Group>
-            </Canvas>
+                        <Image
+                            width={40 * vw}
+                            x={0}
+                            y={0}
+                            height={15 * vh}
+                            image={useImage(props?.item?.image)}
+                            fit="cover"
+                        >
 
-            <TextWrapper style={styles.text}>{props?.item?.coursename}</TextWrapper>
+                            <BlurMask blur={8} style='normal'
+                            />
+
+                        </Image>
+
+                        <Image
+                            width={8 * vw}
+                            x={28 * vw}
+                            y={1 * vh}
+                            height={8 * vw}
+                            image={useImage(props?.item?.icon)}
+                            fit="contain">
+
+                        </Image>
+
+                        <Image
+                        width={8 * vw}
+                        x={2 * vw}
+                        y={1 * vh}
+                        height={8 * vw}
+                        image={useImage(icons.buysubscription)}
+                        fit="contain">
+
+                    </Image>
+                    </Group>
+                </Canvas>
+             
+                <TouchableOpacity
+                    onPress={props.onPress}
+                >
+                    <TextWrapper style={styles.text}>{props?.item?.coursename}</TextWrapper>
+                </TouchableOpacity>
+
+            </View>
         </View>
-        </TouchableOpacity>
+
     );
 };
 

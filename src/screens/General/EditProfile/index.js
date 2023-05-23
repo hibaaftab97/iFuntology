@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { View, Dimensions, LayoutAnimation, ImageBackground, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import styles from './styles';
 import { vh, vw } from '../../../units';
 import ScrollWrapper from '../../../components/ScrollWrapper';
 import GeneralTextInput from '../../../components/TextInputs/GeneralTextInput';
-import LinearGradient from 'react-native-linear-gradient';
 import CommonButton from '../../../components/Button';
 import allImages, { icons } from '../../../assets/images';
 import BackgroundBox from '../../../components/BackgroundBox';
 import TextWrapper from '../../../components/TextWrapper';
-import theme from '../../../utils/theme';
 
 const EditProfile = props => {
 
@@ -36,28 +34,28 @@ const EditProfile = props => {
 
                     />
                 </View>
+                <TextWrapper style={styles.label}>Mobile No*</TextWrapper> 
+                <View   style={{flexDirection:'row',justifyContent:'space-evenly'}}>
 
                 <View style={styles.customStyle}>
-                    <View   style={{flexDirection:'row',alignItems:'center'}}>
+                    <View   style={{flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
                     <Image source={icons.flag} 
-                    style={{width:8*vw,height:8*vw,resizeMode:'contain'}}/>
+                    style={{width:6*vw,height:6*vw,resizeMode:'contain'}}/>
                      <Image source={icons.dropdown} 
-                    style={{width:4*vw,height:4*vw,resizeMode:'contain'}}/>
+                    style={{width:3*vw,height:3*vw,resizeMode:'contain'}}/>
                     </View>
+
+                    
                    
                 </View>
+                <View   style={[styles.customStyle,{ width: 50 * vw,}]}>
 
+                </View>
 
+                </View>
 
                 <View style={{ alignItems: 'center' }}>
-                    <GeneralTextInput
-                        secureTextEntry
-                        label="Confirm Password*"
-
-                        inputViewStyle={{ width: 70 * vw }}
-                        placeHolder=""
-
-                    />
+                   
                     <CommonButton text="Save"
                         buttonStyle={{ marginTop: 4 * vh }} />
 

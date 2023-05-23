@@ -15,6 +15,7 @@ const theme = {
   primary:"#E84BCE",
   placeholder:'#969696',
   yellow:'#B17F4A',
+  error:"#FC2020"
 };
 
 export default theme;

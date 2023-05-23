@@ -16,6 +16,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 1.5 * vh
   },
+  label:{
+
+    color: '#1E2022',
+    fontSize:1.7*vh,
+    marginTop:2*vh,
+    paddingLeft:10*vw,
+    fontFamily:Fonts.Gilroy_Medium,
+    width: 66 * vw,
+  },
   customStyle: {
     width: 20 * vw,
     height: 6 * vh,
@@ -23,7 +32,6 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     borderWidth: 0.3 * vw,
     // flexDirection: 'row',
-    alignItems:'center',
     borderRadius: 2 * vw,
     marginTop: 1 * vh,
   },

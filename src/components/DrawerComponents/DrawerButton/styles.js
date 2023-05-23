@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     // tintColor: theme.whiteBackground,
-    height: 5 * vh,
-    width: 5 * vh,
+    height: 3 * vh,
+    width: 3 * vh,
     resizeMode: 'contain',
     marginHorizontal: 5 * vw,
   },
