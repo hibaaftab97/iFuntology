@@ -122,12 +122,16 @@ const ForgotPasswordScreen = props => {
   }
 
   return (
-    <ScrollWrapper avoidKeyboard={true}>
-      <BackgroundBox headerText="Forgot Password">
+ <View  style={{flex:1}}>
+      <BackgroundBox headerText="Forgot Password"
+      bgColor>
 
-        {renderConditionalFields()}
       </BackgroundBox>
+         <ScrollWrapper avoidKeyboard={true}>
+      {renderConditionalFields()}
+
     </ScrollWrapper>
+    </View>
   );
 };
 export default ForgotPasswordScreen;

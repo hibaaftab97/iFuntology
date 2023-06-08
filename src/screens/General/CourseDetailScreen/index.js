@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View,  } from 'react-native';
+import { View, } from 'react-native';
 import styles from './styles';
 import ScrollWrapper from '../../../components/ScrollWrapper';
 import BackgroundBox from '../../../components/BackgroundBox';
@@ -12,16 +12,23 @@ const CourseDetailScreen = props => {
 
     const course = { ...props?.route?.params?.course };
     return (
-        <ScrollWrapper avoidKeyboard={true}
-            contentContainerStyle={styles.content}>
+        <View style={{ flex: 1 }}>
             <BackgroundBox bgColor
-            backbutton
-            onPress={()=> props.navigation.pop()}
+                backbutton
+                onPress={() => props.navigation.pop()}
                 headerText={course.coursename}>
 
-                <View style={{ paddingHorizontal: 8 * vw }}>
-                    <View style={{ flexDirection: 'row', 
-                    marginTop: 2 * vh, alignItems: 'center' }}>
+
+
+
+            </BackgroundBox>
+
+            <ScrollWrapper>
+                <View style={{ paddingHorizontal: 8 * vw, }}>
+                    <View style={{
+                        flexDirection: 'row',
+                        marginTop: 2 * vh, alignItems: 'center'
+                    }}>
                         <TextWrapper style={styles.courseText}>Course Name:</TextWrapper>
                         <TextWrapper style={styles.courseName}> {course.coursename}</TextWrapper>
                     </View>
@@ -40,24 +47,35 @@ const CourseDetailScreen = props => {
                         <CommonButton text="Invite Students"
                             colors
                             startColor="#C4A472"
-                            onPress={()=> props.navigation.navigate("InviteStudentScreen")}
+                            onPress={() => props.navigation.navigate("InviteStudentScreen")}
                             endColor="#947037" />
                         <CommonButton text="View Students"
-                            onPress={()=> props.navigation.navigate("StudentListScreen")}
+                            onPress={() => props.navigation.navigate("StudentListScreen")}
 
+                        />
+                        <CommonButton text="Create Quiz"
+                            onPress={() => props.navigation.navigate("SelectChapterScreen", {
+                                coursename: course.coursename
+                            })}
+                            endColor="#060083"
+                            colors
+                            startColor="#2E38FF"
+                        />
+                           <CommonButton text="View Quiz"
+                            onPress={() => props.navigation.navigate("ViewQuizScreen", {
+                                coursename: course.coursename
+                            })}
+                            endColor="#060083"
+                            colors
+                            startColor="#2E38FF"
                         />
                     </View>
 
 
 
                 </View>
-
-
-            </BackgroundBox>
-
-
-        </ScrollWrapper>
-
+            </ScrollWrapper>
+        </View>
 
     );
 };

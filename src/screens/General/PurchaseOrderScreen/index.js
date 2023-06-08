@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View,  } from 'react-native';
+import { View, } from 'react-native';
 import styles from './styles';
 import ScrollWrapper from '../../../components/ScrollWrapper';
 import BackgroundBox from '../../../components/BackgroundBox';
@@ -10,12 +10,17 @@ import GeneralTextInput from '../../../components/TextInputs/GeneralTextInput';
 const PurchaseOrderScreen = props => {
 
     return (
-        <ScrollWrapper avoidKeyboard={true}
-            contentContainerStyle={styles.content}>
+        <View style={{ flex: 1 }}>
             <BackgroundBox bgColor
                 backbutton
                 onPress={() => props.navigation.pop()}
                 headerText="Purchase Order">
+
+
+
+            </BackgroundBox>
+            <ScrollWrapper avoidKeyboard={true}
+                contentContainerStyle={styles.content}>
 
                 <View style={{ alignItems: 'center' }}>
                     <GeneralTextInput
@@ -36,20 +41,15 @@ const PurchaseOrderScreen = props => {
 
                     />
                     <CommonButton text="Buy Now"
-                       colors
-                       startColor="#4C4C4C"
-                       onPress={() => { props.navigation.pop()}}
-                       endColor="#101010" 
+                        colors
+                        startColor="#4C4C4C"
+                        onPress={() => { props.navigation.pop() }}
+                        endColor="#101010"
                         buttonStyle={{ marginTop: 4 * vh }} />
                 </View>
+            </ScrollWrapper>
 
-
-            </BackgroundBox>
-
-
-        </ScrollWrapper>
-
-
+        </View>
     );
 };
 export default PurchaseOrderScreen;

@@ -20,6 +20,17 @@ export default style = StyleSheet.create({
         height:100*vh,
 
       },
+      gradient: {
+        zIndex: 22,
+        position: 'absolute',
+        width: '100%',
+        height: '80%',
+        justifyContent:'flex-end',
+        alignSelf: 'center',
+        bottom: 0,
+        borderBottomLeftRadius: 4*vw,
+        borderBottomRightRadius:  4*vw,
+      },
       pinkBox:{
         width: 40 * vw,
        

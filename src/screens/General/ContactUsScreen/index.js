@@ -11,23 +11,25 @@ import BackgroundBox from '../../../components/BackgroundBox';
 const ContactUsScreen = props => {
 
     return (
-        <ScrollWrapper avoidKeyboard={true}
-            contentContainerStyle={styles.content}>
-            <BackgroundBox  headerText="Contact Us"
-            type="drawer">
-
+        <View   style={{flex:1}}>
+            <BackgroundBox headerText="Contact Us"
+            bgColor
+                type="drawer">
+            </BackgroundBox>
+            <ScrollWrapper avoidKeyboard={true}
+            >
                 <View style={{ alignItems: 'center' }}>
                     <GeneralTextInput
                         placeHolder="Full Name*"
 
                     />
-                   
+
                     <GeneralTextInput
                         placeHolder="Email Address*"
 
                     />
                     <GeneralTextInput
-                        
+
                         placeHolder="Subject*"
 
                     />
@@ -39,23 +41,16 @@ const ContactUsScreen = props => {
 
                     />
                 </View>
-                
+
 
                 <View style={{ alignItems: 'center' }}>
                     <CommonButton text="Submit"
                         buttonStyle={{ marginTop: 4 * vh }} />
-                  
+
 
                 </View>
-
-
-
-
-            </BackgroundBox>
-
-
-        </ScrollWrapper>
-
+            </ScrollWrapper>
+        </View>
 
     );
 };

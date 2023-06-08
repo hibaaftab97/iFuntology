@@ -8,9 +8,10 @@ const styles = StyleSheet.create({
 
     content: {
         // justifyContent:'flex-end'
+        // flex:1
     },
     text: {
-        color: theme.blue,
+        color: theme.black,
         fontSize: 2 * vh
     },
     value: {
@@ -29,13 +30,13 @@ const styles = StyleSheet.create({
         fontSize: 1.7 * vh
     },
     customStyle: {
-        width: 80 * vw,
-        borderColor: theme.textOutline,
-        borderWidth: 0.3 * vw,
-        padding: 2 * vh,
-
-        borderRadius: 2 * vw,
-        marginTop: 1 * vh,
+        width:90*vw,
+        backgroundColor:'white',
+        paddingVertical:vh,
+        paddingHorizontal:2*vw,
+        elevation:vh,
+        borderRadius:1.5*vh,
+        justifyContent:'center'
     },
 
 

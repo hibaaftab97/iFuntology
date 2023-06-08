@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
 
 
   content: {
-    alignItems:'center'
-    // justifyContent:'flex-end'
+    alignItems:'center',
+
   },
   label:{
     fontSize:1.7*vh,

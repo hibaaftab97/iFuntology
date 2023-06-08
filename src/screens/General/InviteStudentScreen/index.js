@@ -11,13 +11,18 @@ import GeneralTextInput from '../../../components/TextInputs/GeneralTextInput';
 const InviteStudentScreen = props => {
 
     return (
-        <ScrollWrapper avoidKeyboard={true}
-            contentContainerStyle={styles.content}>
+        <View>
             <BackgroundBox bgColor
                 backbutton
                 onPress={() => props.navigation.pop()}
                 headerText="Invite Students">
 
+
+
+
+            </BackgroundBox>
+            <ScrollWrapper avoidKeyboard={true}
+            >
                 <View style={{ alignItems: 'center' }}>
                     <GeneralTextInput
                         placeHolder="First Name*"
@@ -34,15 +39,10 @@ const InviteStudentScreen = props => {
                     />
                     <CommonButton text="Invite Students"
 
-                        buttonStyle={{ marginTop: 4 * vh }} />
+                        buttonStyle={{ marginTop: 2 * vh }} />
                 </View>
-
-
-            </BackgroundBox>
-
-
-        </ScrollWrapper>
-
+            </ScrollWrapper>
+        </View>
 
     );
 };

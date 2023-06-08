@@ -7,6 +7,7 @@ import allImages, { generalImages, icons } from '../../assets/images';
 import { vh, vw } from '../../units';
 import theme from '../../utils/theme';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
+import ScrollWrapper from '../ScrollWrapper';
 
 
 
@@ -35,9 +36,13 @@ const BackgroundBox = props => {
     const navigation = useNavigation();
 
     return (
+
+        // <ScrollWrapper 
+        // contentContainerStyle={{ }}>
         <ImageBackground
             style={{
                 width: 100 * vw,
+                height: 100 * vh
             }}
             resizeMode='cover'
             imageStyle={styles.scroll}
@@ -57,7 +62,7 @@ const BackgroundBox = props => {
                 paddingHorizontal: 4 * vw, paddingBottom: 1 * vh
             }}>
                 {props.backbutton ? <TouchableOpacity style={styles.circle}
-                    onPress={()=> navigation.pop()}>
+                    onPress={() => navigation.pop()}>
                     <Image source={icons.backarrow}
                         style={{ width: 3 * vw, height: 3 * vw, resizeMode: 'contain' }}
                     />
@@ -68,21 +73,23 @@ const BackgroundBox = props => {
                 </View>
 
             </View>
+            <View style={styles.fieldContainer}>
 
+                {props?.bgColor ? <ImageBackground
+                    style={{ width: 100 * vw, height:100*vh}}
+                    resizeMode='cover'
+                    imageStyle={{ width: 100 * vw,}}
+                    source={generalImages.bgColor}>
 
-            <View style={styles.pinkBox} >
-                <View style={styles.fieldContainer}>
-                    {props?.bgColor ? <ImageBackground
-                        style={{ width: 100 * vw,height:100*vh }}
-                        imageStyle={{ width: 100 * vw,height:100*vh }}
-                        source={generalImages.bgColor}>
-                        {props.children}
+                    {props.children}
 
-                    </ImageBackground> : props.children}
-                </View>
+                </ImageBackground> :
+                    props.children
+                }
             </View>
 
         </ImageBackground>
+
     );
 };
 

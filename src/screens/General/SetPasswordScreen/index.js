@@ -10,14 +10,21 @@ import BackgroundBox from '../../../components/BackgroundBox';
 const SetPasswordScreen = props => {
 
     return (
-        <ScrollWrapper avoidKeyboard={true}
-            contentContainerStyle={styles.content}>
-            <BackgroundBox  headerText="Set Password"
-            bgColor
-            backbutton>
+        <View style={{ flex: 1 }}>
+            <BackgroundBox headerText="Set Password"
+                bgColor
+                backbutton>
 
+
+
+
+
+
+            </BackgroundBox>
+            <ScrollWrapper avoidKeyboard={true}
+                contentContainerStyle={styles.content}>
                 <View style={{ alignItems: 'center' }}>
-                   
+
                     <GeneralTextInput
                         secureTextEntry
                         inputViewStyle={{ width: 70 * vw }}
@@ -43,23 +50,16 @@ const SetPasswordScreen = props => {
 
                     />
                 </View>
-               
+
 
                 <View style={{ alignItems: 'center' }}>
                     <CommonButton text="Save"
                         buttonStyle={{ marginTop: 4 * vh }} />
-                    
+
 
                 </View>
-
-
-
-
-            </BackgroundBox>
-
-
-        </ScrollWrapper>
-
+            </ScrollWrapper>
+        </View>
 
     );
 };

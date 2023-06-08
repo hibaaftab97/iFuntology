@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
 
   content: {
     // justifyContent:'flex-end'
+    backgroundColor:'red',
   },
   buttonContainer: {
     width: vw * 80, height: vh * 7,

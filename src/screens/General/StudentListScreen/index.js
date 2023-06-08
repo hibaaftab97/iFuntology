@@ -41,22 +41,26 @@ const StudentListScreen = props => {
     }
     return (
         <View>
-        <ScrollWrapper avoidKeyboard={true}
-            contentContainerStyle={styles.content}>
+
             <BackgroundBox bgColor
                 backbutton
                 onPress={() => props.navigation.pop()}
                 headerText="Student Courses">
 
 
+
+
+            </BackgroundBox>
+            <ScrollWrapper avoidKeyboard={true}
+            >
                 <View style={{ alignItems: 'center' }}>
                     <FlatList data={data}
                         contentContainerStyle={{ alignItems: 'center' }}
                         ListFooterComponent={footer}
                         renderItem={({ item, index }) => {
                             return (
-                                <StudentBox item={item} 
-                                onPress={()=>props.navigation.navigate("StudentDetailScreen")}/>
+                                <StudentBox item={item}
+                                    onPress={() => props.navigation.navigate("StudentDetailScreen")} />
 
                             )
                         }} />
@@ -64,15 +68,12 @@ const StudentListScreen = props => {
                     <CommonButton text="Create Test"
                         colors
                         startColor="#2E38FF"
-                        onPress={() => {}}
+                        onPress={() => { }}
                         endColor="#060083" />
 
                 </View>
 
-            </BackgroundBox>
-
-
-        </ScrollWrapper>
+            </ScrollWrapper>
         </View>
 
     );

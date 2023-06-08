@@ -6,6 +6,7 @@ import RegisterScreen from '../screens/Auth/TeacherRegistration';
 import SubscriptionPlanScreen from '../screens/Auth/SubscriptionPlan';
 import LoginScreen from '../screens/Auth/LoginScreen';
 import ForgotPasswordScreen from '../screens/Auth/ForgotPasswordScreen';
+import TermsConditionScreen from '../screens/Auth/TermsConditionScreen';
 
 
 function AuthStack() {
@@ -31,6 +32,11 @@ function AuthStack() {
         options={{headerShown: false}}
         name="ForgotPasswordScreen"
         component={ForgotPasswordScreen}
+      /> 
+       <Stack.Screen
+        options={{headerShown: false}}
+        name="TermsConditionScreen"
+        component={TermsConditionScreen}
       /> 
     </Stack.Navigator>
   );

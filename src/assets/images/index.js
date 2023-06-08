@@ -33,6 +33,7 @@ export const icons={
   home: require('./icons/home.png'),
   contact: require('./icons/contact.png'),
   tick: require('./icons/tick.png'),
+  add: require('./icons/add.png'),
 
 }
 export const authicons={

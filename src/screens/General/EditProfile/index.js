@@ -12,12 +12,18 @@ import TextWrapper from '../../../components/TextWrapper';
 const EditProfile = props => {
 
     return (
-        <ScrollWrapper avoidKeyboard={true}
-            contentContainerStyle={styles.content}>
+        <View style={{ flex: 1 }}>
             <BackgroundBox headerText="Edit Profile"
                 bgColor
                 backbutton>
 
+
+
+
+            </BackgroundBox>
+
+            <ScrollWrapper avoidKeyboard={true}
+                contentContainerStyle={styles.content}>
                 <View style={{ alignItems: 'center' }}>
 
                     <GeneralTextInput
@@ -34,42 +40,36 @@ const EditProfile = props => {
 
                     />
                 </View>
-                <TextWrapper style={styles.label}>Mobile No*</TextWrapper> 
-                <View   style={{flexDirection:'row',justifyContent:'space-evenly'}}>
+                <TextWrapper style={styles.label}>Mobile No*</TextWrapper>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
 
-                <View style={styles.customStyle}>
-                    <View   style={{flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
-                    <Image source={icons.flag} 
-                    style={{width:6*vw,height:6*vw,resizeMode:'contain'}}/>
-                     <Image source={icons.dropdown} 
-                    style={{width:3*vw,height:3*vw,resizeMode:'contain'}}/>
+                    <View style={styles.customStyle}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly' }}>
+                            <Image source={icons.flag}
+                                style={{ width: 6 * vw, height: 6 * vw, resizeMode: 'contain' }} />
+                            <Image source={icons.dropdown}
+                                style={{ width: 3 * vw, height: 3 * vw, resizeMode: 'contain' }} />
+                        </View>
+
+
+
                     </View>
+                    <View style={[styles.customStyle, { width: 50 * vw, }]}>
 
-                    
-                   
-                </View>
-                <View   style={[styles.customStyle,{ width: 50 * vw,}]}>
-
-                </View>
+                    </View>
 
                 </View>
 
                 <View style={{ alignItems: 'center' }}>
-                   
+
                     <CommonButton text="Save"
                         buttonStyle={{ marginTop: 4 * vh }} />
 
 
                 </View>
 
-
-
-
-            </BackgroundBox>
-
-
-        </ScrollWrapper>
-
+            </ScrollWrapper>
+        </View>
 
     );
 };

@@ -27,7 +27,7 @@ const EnterKits = props => {
           onPress={props.onHide}>
           <Image source={icons.cross} style={styles.crossIconStyle} />
         </TouchableOpacity>
-        <FlatList data={getKits()}
+        <FlatList data={props?.kits}
         style={{marginTop:6*vh}}
           showsVerticalScrollIndicator={false}
           renderItem={({ item, index }) => {

@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TouchableOpacity, FlatList, Image } from 'react-native';
 import styles from './styles';
 import ScrollWrapper from '../../../components/ScrollWrapper';
@@ -7,6 +7,7 @@ import { vh, vw } from '../../../units';
 import TextWrapper from '../../../components/TextWrapper';
 import CommonButton from '../../../components/Button';
 import EnterKits from '../../../components/Modal/EnterKits';
+import { getKits } from '../../../utils';
 
 const PackageDetailScreen = props => {
 
@@ -14,6 +15,9 @@ const PackageDetailScreen = props => {
     const [kits, setKits] = useState('No. of Kits');
 
     const [isSelected, setSelected] = useState(0);
+    const [isYearlySelected, setYearlySelected] = useState(0);
+
+    let kitPrice = 4.99;
 
 
     const handleModalVisibility = () => {
@@ -22,33 +26,55 @@ const PackageDetailScreen = props => {
 
     useEffect(() => {
         handleModalVisibility();
-     }, [kits]);
+    }, [kits]);
+
+    const handlePrice = (kitPrice) => {
+        if (isSelected == 0) {
+
+            return kits === 'No. of Kits' ? '$4.99' : '$' + (kitPrice * kits).toFixed(2);
+        }
+        else {
+            if (isYearlySelected == 0) {
+                return kits === 'No. of Kits' ? '$4.99' : '$' + (kitPrice * kits).toFixed(2);
+            }
+            else {
+                return kits === 'No. of Kits' ? '$4.99' : '$' + (kitPrice * kits * 12).toFixed(2);
+
+            }
+        }
+    }
+
     return (
-        <ScrollWrapper avoidKeyboard={true}
-            contentContainerStyle={styles.content}>
-            <EnterKits
-                onPress={handleModalVisibility}
-                onKitSelect={(kit) => {
-                    setKits(kit);
-                    
-                }
-                }
-                onHide={handleModalVisibility}
-                visibility={visible}
-            />
+        <View style={{ flex: 1 }}>
             <BackgroundBox bgColor
                 backbutton
                 onPress={() => props.navigation.pop()}
                 headerText="Package Details">
 
+
+
+            </BackgroundBox>
+            <ScrollWrapper avoidKeyboard={true}
+                contentContainerStyle={styles.content}>
+                <EnterKits
+                    onPress={handleModalVisibility}
+                    onKitSelect={(kit) => {
+                        setKits(kit);
+
+                    }
+                    }
+                    kits={getKits()}
+                    onHide={handleModalVisibility}
+                    visibility={visible}
+                />
                 <View style={{ paddingHorizontal: 10 * vw }}>
 
                     <TouchableOpacity style={{ flexDirection: 'row', }}
-                    onPress={()=> setSelected(0)}>
+                        onPress={() => setSelected(0)}>
                         <View style={styles.outer}>
-                            {isSelected==0?<View style={styles.inner}>
+                            {isSelected == 0 ? <View style={styles.inner}>
 
-                            </View>:null}
+                            </View> : null}
                         </View>
                         <View style={{ marginLeft: 4 * vw }}>
                             <TextWrapper style={styles.text}>Physical Kit</TextWrapper>
@@ -56,12 +82,12 @@ const PackageDetailScreen = props => {
 
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={()=> setSelected(1)}
-                    style={{ flexDirection: 'row', marginTop: 2 * vh }}>
+                    <TouchableOpacity onPress={() => setSelected(1)}
+                        style={{ flexDirection: 'row', marginTop: 2 * vh }}>
                         <View style={styles.outer}>
-                            {isSelected==1?<View style={styles.inner}>
+                            {isSelected == 1 ? <View style={styles.inner}>
 
-                            </View>:null}
+                            </View> : null}
                         </View>
                         <View style={{ marginLeft: 4 * vw }}>
                             <TextWrapper style={styles.text}>Web based subscriptions</TextWrapper>
@@ -70,14 +96,45 @@ const PackageDetailScreen = props => {
                         </View>
                     </TouchableOpacity>
 
-                    <View   style={{flexDirection:'row',marginTop:2*vh,alignItems:'center'}}>
-                    <TextWrapper style={styles.text}>Price:</TextWrapper>
-                    <TextWrapper style={styles.value}>  $394</TextWrapper>
+                    {isSelected === 1 ? <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 2 * vh, justifyContent: 'space-between' }}>
+                        <TouchableOpacity style={{ flexDirection: 'row', }}
+                            onPress={() => setYearlySelected(0)}>
+                            <View style={styles.outer}>
+                                {isYearlySelected == 0 ? <View style={styles.inner}>
+
+                                </View> : null}
+                            </View>
+                            <View style={{ marginLeft: 4 * vw }}>
+                                <TextWrapper style={styles.text}>Monthly</TextWrapper>
+
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => {
+                            setYearlySelected(1);
+                            handlePrice(kitPrice);
+                        }
+                        }
+                            style={{ flexDirection: 'row', }}>
+                            <View style={styles.outer}>
+                                {isYearlySelected == 1 ? <View style={styles.inner}>
+
+                                </View> : null}
+                            </View>
+                            <View style={{ marginLeft: 4 * vw }}>
+                                <TextWrapper style={styles.text}>Yearly</TextWrapper>
+
+                            </View>
+                        </TouchableOpacity>
+                    </View> : null}
+
+                    <View style={{ flexDirection: 'row', marginTop: 2 * vh, alignItems: 'center' }}>
+                        <TextWrapper style={styles.text}>Price:</TextWrapper>
+                        <TextWrapper style={styles.value}>  $4.99 (each kit)</TextWrapper>
 
                     </View>
-                    <View   style={{flexDirection:'row',marginTop:2*vh,alignItems:'center'}}>
-                    <TextWrapper style={styles.text}>Total Price:</TextWrapper>
-                    <TextWrapper style={styles.value}>  {kits==='No. of Kits'?'$394':394*kits}</TextWrapper>
+                    <View style={{ flexDirection: 'row', marginTop: 2 * vh, alignItems: 'center' }}>
+                        <TextWrapper style={styles.text}>Total Price:</TextWrapper>
+                        <TextWrapper style={styles.value}>  {handlePrice(kitPrice)}</TextWrapper>
 
                     </View>
 
@@ -95,7 +152,7 @@ const PackageDetailScreen = props => {
                 </View>
                 <View style={{ alignItems: 'center', marginTop: 2 * vh }}>
                     <CommonButton text="Buy Now"
-                    onPress={() => { props.navigation.navigate("PurchaseOrderScreen")}}
+                        onPress={() => { props.navigation.navigate("PurchaseOrderScreen") }}
                         colors
                         startColor="#C4A472"
                         endColor="#947037" />
@@ -105,12 +162,9 @@ const PackageDetailScreen = props => {
                     />
                 </View>
 
-            </BackgroundBox>
+            </ScrollWrapper>
 
-
-        </ScrollWrapper>
-
-
+        </View>
     );
 };
 export default PackageDetailScreen;

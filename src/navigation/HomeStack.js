@@ -9,6 +9,9 @@ import StudentListScreen from '../screens/General/StudentListScreen';
 import StudentDetailScreen from '../screens/General/StudentDetailScreen';
 import PackageDetailScreen from '../screens/General/PackageDetailScreen';
 import PurchaseOrderScreen from '../screens/General/PurchaseOrderScreen';
+import SelectChapterScreen from '../screens/General/SelectChapterScreen';
+import CreateQuizScreen from '../screens/General/CreateQuizScreen';
+import ViewQuizScreen from '../screens/General/ViewQuizScreen';
 
 
 function HomeStack() {
@@ -49,6 +52,21 @@ function HomeStack() {
         options={{headerShown: false}}
         name="PurchaseOrderScreen"
         component={PurchaseOrderScreen}
+      /> 
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="SelectChapterScreen"
+        component={SelectChapterScreen}
+      /> 
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="CreateQuizScreen"
+        component={CreateQuizScreen}
+      /> 
+       <Stack.Screen
+        options={{headerShown: false}}
+        name="ViewQuizScreen"
+        component={ViewQuizScreen}
       /> 
     </Stack.Navigator>
   );
