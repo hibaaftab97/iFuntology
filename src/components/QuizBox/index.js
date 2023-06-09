@@ -18,15 +18,15 @@ const QuizBox = props => {
                 <GeneralTextInput
                     label="Question"
                     placeHolder="Enter your question"
-                    conStyle={{ width: 65 * vw }}
-                    inputViewStyle={{ width: 65 * vw }}
+                    conStyle={{ width: props?.type==='quiz'?65 * vw:80*vw }}
+                    inputViewStyle={{ width: props?.type==='quiz'?65 * vw :80*vw}}
                 />
-                <GeneralTextInput
+                {props?.type==='quiz'?<GeneralTextInput
                     label="Points"
                     placeHolder="point"
                     conStyle={{ width: 18 * vw }}
                     inputViewStyle={{ width: 18 * vw }}
-                />
+                />:null}
             </View>
             {Array.apply(0, new Array(4)).map((item, index) => {
                 return (

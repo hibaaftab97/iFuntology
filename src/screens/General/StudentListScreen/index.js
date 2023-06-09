@@ -65,11 +65,7 @@ const StudentListScreen = props => {
                             )
                         }} />
 
-                    <CommonButton text="Create Test"
-                        colors
-                        startColor="#2E38FF"
-                        onPress={() => { }}
-                        endColor="#060083" />
+                    
 
                 </View>
 

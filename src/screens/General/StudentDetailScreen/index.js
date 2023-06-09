@@ -10,7 +10,7 @@ import CommonButton from '../../../components/Button';
 const StudentDetailScreen = props => {
 
     return (
-        <View style={{ flex: 1 ,}}>
+        <View style={{ flex: 1, }}>
             <BackgroundBox bgColor
                 backbutton
                 onPress={() => props.navigation.pop()}
@@ -53,17 +53,30 @@ const StudentDetailScreen = props => {
                         }}
                     />
 
-                    <TextWrapper style={styles.coursedetail}>Courses Details</TextWrapper>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 2 * vh }}>
-                        <TextWrapper style={styles.label}>Quiz Name: </TextWrapper>
-                        <TextWrapper style={styles.value}>Quiz No 1</TextWrapper>
+                    <CommonButton text="View Test"
+                        onPress={() => props.navigation.navigate("ViewQuizScreen", {
+                            coursename: props.route.params?.coursename,
+                            type: "test",
+                            viewdetails:'student'
+                        })}
+                        endColor="#060083"
+                        colors
+                        startColor="#2E38FF"
+                    />
+                    <CommonButton text="View Quiz"
+                        onPress={() => props.navigation.navigate("ViewQuizScreen", {
+                            coursename: props.route.params?.coursename,
+                            viewdetails:'student',
 
-                    </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 2 * vh }}>
-                        <TextWrapper style={styles.label}>Quiz Score: </TextWrapper>
-                        <TextWrapper style={styles.value}>36</TextWrapper>
+                            type: "quiz"
 
-                    </View>
+                        })}
+                        endColor="#060083"
+                        colors
+                        startColor="#2E38FF"
+                    />
+
+
                     {/* <View style={{ alignItems: 'center',marginTop:2*vh }}>
     <CommonButton text="View Story"
         colors

@@ -69,16 +69,7 @@ const SettingScreen = props => {
                     <TextWrapper style={styles.value}>*******************</TextWrapper>
 
                 </View>
-                <View
-                    style={styles.divider}
-                />
-
-
-                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 2 * vh }}>
-                    <TextWrapper style={styles.label}>Quiz Score: </TextWrapper>
-                    <TextWrapper style={styles.value}>36</TextWrapper>
-
-                </View>
+               
                 <View style={{ alignItems: 'center', marginTop: 2 * vh }}>
                     <CommonButton text="Edit Profile"
                         colors

@@ -13,11 +13,10 @@ import theme from '../../../utils/theme';
 import QuizBox from '../../../components/QuizBox';
 import { icons } from '../../../assets/images';
 
-const CreateQuizScreen = props => {
+const CreateTestScreen = props => {
 
     const [data, setData] = useState([{
         question: "",
-        points: "",
         answer: 1
     }
 
@@ -27,8 +26,6 @@ const CreateQuizScreen = props => {
     const renderItem = ({ item, index }) => {
         return (
             <QuizBox item={item}
-                type='quiz'
-
                 onChangeAnswer={(ind) => {
                     console.log("jjj" + ind, index);
                     let items = [...data];
@@ -36,6 +33,7 @@ const CreateQuizScreen = props => {
                         ...items[index],
                         answer: ind
                     }
+
                     items[index] = item;
                     setData(items);
 
@@ -51,7 +49,7 @@ const CreateQuizScreen = props => {
             <BackgroundBox bgColor
                 backbutton
                 onPress={() => props.navigation.pop()}
-                headerText="Create Quiz">
+                headerText="Create Test">
 
 
             </BackgroundBox>
@@ -61,7 +59,14 @@ const CreateQuizScreen = props => {
 
                 <View style={{ paddingHorizontal: 5 * vw }}>
                     <GeneralTextInput
-                        label="Quiz Name"
+                        label="Test Name"
+                        placeHolder=""
+                        conStyle={{ width: 90 * vw }}
+
+
+                    />
+                    <GeneralTextInput
+                        label="Total Marks"
                         placeHolder=""
                         conStyle={{ width: 90 * vw }}
 
@@ -106,4 +111,4 @@ const CreateQuizScreen = props => {
 
     );
 };
-export default CreateQuizScreen;
+export default CreateTestScreen;

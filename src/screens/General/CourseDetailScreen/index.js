@@ -50,12 +50,17 @@ const CourseDetailScreen = props => {
                             onPress={() => props.navigation.navigate("InviteStudentScreen")}
                             endColor="#947037" />
                         <CommonButton text="View Students"
-                            onPress={() => props.navigation.navigate("StudentListScreen")}
+                            onPress={() => props.navigation.navigate("StudentListScreen",{
+                                coursename: course.coursename,
+
+                            })}
 
                         />
                         <CommonButton text="Create Quiz"
                             onPress={() => props.navigation.navigate("SelectChapterScreen", {
-                                coursename: course.coursename
+                                coursename: course.coursename,
+                                type:'quiz'
+
                             })}
                             endColor="#060083"
                             colors
@@ -63,7 +68,27 @@ const CourseDetailScreen = props => {
                         />
                            <CommonButton text="View Quiz"
                             onPress={() => props.navigation.navigate("ViewQuizScreen", {
-                                coursename: course.coursename
+                                coursename: course.coursename,
+                                type:"quiz"
+
+                            })}
+                            endColor="#060083"
+                            colors
+                            startColor="#2E38FF"
+                        />
+                        <CommonButton text="Create Test"
+                            onPress={() => props.navigation.navigate("SelectChapterScreen", {
+                                coursename: course.coursename,
+                                type:'test'
+                            })}
+                            endColor="#060083"
+                            colors
+                            startColor="#2E38FF"
+                        />
+                           <CommonButton text="View Test"
+                            onPress={() => props.navigation.navigate("ViewQuizScreen", {
+                                coursename: course.coursename,
+                                type:"test"
                             })}
                             endColor="#060083"
                             colors

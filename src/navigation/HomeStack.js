@@ -12,6 +12,7 @@ import PurchaseOrderScreen from '../screens/General/PurchaseOrderScreen';
 import SelectChapterScreen from '../screens/General/SelectChapterScreen';
 import CreateQuizScreen from '../screens/General/CreateQuizScreen';
 import ViewQuizScreen from '../screens/General/ViewQuizScreen';
+import CreateTestScreen from '../screens/General/CreateTestScreen';
 
 
 function HomeStack() {
@@ -62,6 +63,11 @@ function HomeStack() {
         options={{headerShown: false}}
         name="CreateQuizScreen"
         component={CreateQuizScreen}
+      />
+       <Stack.Screen
+        options={{headerShown: false}}
+        name="CreateTestScreen"
+        component={CreateTestScreen}
       /> 
        <Stack.Screen
         options={{headerShown: false}}

@@ -24,29 +24,14 @@ const ViewQuizScreen = props => {
         course: "Barbertology"
     },]
 
-    const footer = () => {
-        return (
-            <View style={{
-                width: 60 * vw,
-                marginTop: 4 * vh,
-                flexDirection: 'row', justifyContent: 'space-evenly'
-            }}>
-                <TextWrapper style={styles.headerText}>Chapter</TextWrapper>
-                <TextWrapper style={styles.headerText}>Chapter</TextWrapper>
-
-
-
-
-            </View>
-        )
-    }
+    
     return (
         <View style={{ flex: 1 }}>
 
             <BackgroundBox bgColor
                 backbutton
                 onPress={() => props.navigation.pop()}
-                headerText="View Quiz">
+                headerText={props.route.params?.type=='quiz'?"View Quiz":"View Test"}>
 
 
 
@@ -61,12 +46,21 @@ const ViewQuizScreen = props => {
                         renderItem={({ item, index }) => {
                             return (
                                 <View style={styles.customeStyle}>
+                                     <View style={{ flexDirection: "row" }}>
+                                    {props.route.params?.type=='quiz'?<TextWrapper style={styles.headerText}>Quiz Name:</TextWrapper>:
+                                    <TextWrapper style={styles.headerText}>Test Name:</TextWrapper>}
+                                    
+                                    <TextWrapper style={styles.value}>abc</TextWrapper>
+
+
+                                </View>
                                     <View style={{ flexDirection: "row" }}>
                                         <TextWrapper style={styles.headerText}>Unit:</TextWrapper>
                                         <TextWrapper style={styles.value}>abc</TextWrapper>
 
 
                                     </View>
+                                   
 
                                     <View style={{ flexDirection: "row" }}>
                                         <TextWrapper style={styles.headerText}>Chapter:</TextWrapper>
@@ -80,6 +74,26 @@ const ViewQuizScreen = props => {
 
 
                                     </View>
+
+                                    {props.route.params?.type=='quiz'&& props.route.params?.viewdetails=='student'?<View>
+                                    <View style={{ flexDirection: "row" }}>
+                                        <TextWrapper style={styles.headerText}>Maximum Marks:</TextWrapper>
+                                        <TextWrapper style={styles.value}>abc</TextWrapper>
+
+
+                                    </View>
+                                    <View style={{ flexDirection: "row" }}>
+                                        <TextWrapper style={styles.headerText}>Obtained Marks:</TextWrapper>
+                                        <TextWrapper style={styles.value}>abc</TextWrapper>
+
+
+                                    </View>
+                                    </View>:
+                                    props.route.params?.type=='test' &&props.route.params?.viewdetails=='student'?
+                                    <TextWrapper style={styles.headerText}>Pass</TextWrapper>
+
+
+                                    :null}
                                 </View>
                             )
                         }} />

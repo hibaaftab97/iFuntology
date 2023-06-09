@@ -81,7 +81,16 @@ const SelectChapterScreen = props => {
                 </View>
                 <View style={{ alignItems: 'center', marginTop: 2 * vh, }}>
                     <CommonButton text="Next"
-                        onPress={() => { props.navigation.navigate("CreateQuizScreen") }}
+                        onPress={() => {
+                            if(props.route.params?.type=='quiz'){
+                                props.navigation.navigate("CreateQuizScreen")
+
+                            }
+                            else{
+                            props.navigation.navigate("CreateTestScreen")
+
+                            }
+                         }}
                         colors
                         startColor="#C4A472"
                         endColor="#947037" />
